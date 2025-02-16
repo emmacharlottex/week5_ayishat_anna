@@ -8,6 +8,7 @@ while user not in allowed_letters:
 
         user = input('Enter your choice of Rock, Paper or Scissors using R, P or S: ').lower()
 
+
 def user_choice(tool):
    # r = 'Rock'
    # p = 'Paper'
@@ -20,26 +21,37 @@ def user_choice(tool):
         print('You have chosen: Scissors')
     return tool
 
-user_choice(user)
+userchoice = user_choice(user)
 
 
-def computer(number):
+def computer():
     number = random.randint(0, 2)
     if number == 0:
         print("Computer's choice of tool: Rock")
-    if number == 1:
+        return 'r'
+    elif number == 1:
         print("Computer's choice of tool: Paper")
-    if number == 2:
+        return 'p'
+    elif number == 2:
         print("Computer's choice of tool: Scissors")
-    return number
+        return 's'
 
-computer(6)
+computer_choice = computer()
 
 # while loop needs completing to keep game playing
+#score =0
+winning_cases = {"r":"s", "p":"r", "s":"p"}
 
-if user_choice == computer:
+if userchoice == computer_choice:
     print('You have drawn! Try again')
-user = input('Enter your choice of Rock, Paper or Scissors using R, P or S: ').lower()
+#winning_cases["r"]
+elif winning_cases[computer_choice] == userchoice:
+    print("The computer has won!")
+else:
+    print('You have won!')
+
+#user = input('Enter your choice of Rock, Paper or Scissors using R, P or S: ').lower()
+
 
 
 
